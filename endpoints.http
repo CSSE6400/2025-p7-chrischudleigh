@@ -1,0 +1,44 @@
+@baseUrl = http://localhost:6400
+
+### Health
+GET {{baseUrl}}/api/v1/health
+
+### List All Todos
+GET {{baseUrl}}/api/v1/todos
+
+### List All Todos in window
+GET {{baseUrl}}/api/v1/todos?completed=false&window=3
+
+### Get a specific Todo
+GET {{baseUrl}}/api/v1/todos/1
+
+### Create a Todo
+POST {{baseUrl}}/api/v1/todos
+Content-Type: application/json
+
+{
+"title": "Test Todo",
+"description": "This is a test todo",
+"completed": false,
+"deadline_at": "2025-03-10T00:00:00"
+}
+
+### Update a Todo
+PUT {{baseUrl}}/api/v1/todos/1
+Content-Type: application/json
+
+{
+"title": "updated title"
+}
+
+### Delete a Todo
+DELETE {{baseUrl}}/api/v1/todos/1
+
+### Post
+POST {{baseUrl}}/api/v1/todos/ical
+
+### Get result
+GET {{baseUrl}}/api/v1/todos/ical/50174b7e-2de5-40d5-a5ef-162c50bf163a/result
+
+### Get status
+GET {{baseUrl}}/api/v1/todos/ical/50174b7e-2de5-40d5-a5ef-162c50bf163a/status
